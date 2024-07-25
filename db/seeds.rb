@@ -8,12 +8,16 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# User.create!(first_name: 'Sam', last_name: 'Thomas', email: 'rock@gmail.com')
-# User.create!(first_name: 'Sarah', last_name: 'Jones', email: 'pop@hotmail.com')
-# User.create!(first_name: 'Joe', last_name: 'Smith', email: 'country@msn.com')
-# User.create!(first_name: 'Jen', last_name: 'Adams', email: 'folk@aol.com')
+# SEEDING USERS
+puts 'destroying all User records'
 User.destroy_all
-User.create!(email: 'rock@gmail.com', password: '12qwQW!@', forename: 'Sam', surname: 'Thomas')
-User.create!(email: 'pop@hotmail.com', password: '12qwQW!@', forename: 'Sarah', surname: 'Jones')
-User.create!(email: 'country@msn.com', password: '12qwQW!@', forename: 'Joe', surname: 'Smith')
-User.create!(email: 'folk@aol.com', password: '12qwQW!@', forename: 'Jen', surname: 'Adams')
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+puts "User count: #{User.all.count}"
+puts 'creating User records'
+User.create!(email: 'rock@gmail.com', password: '12qwQW!@', forename: 'Sam', surname: 'Thomas', species: Constants.user.species.OWNER)
+User.create!(email: 'pop@hotmail.com', password: '12qwQW!@', forename: 'Sarah', surname: 'Jones', species: Constants.user.species.CARETAKER)
+User.create!(email: 'country@msn.com', password: '12qwQW!@', forename: 'Joe', surname: 'Smith', species: Constants.user.species.OWNER_AND_CARETAKER)
+User.create!(email: 'folk@aol.com', password: '12qwQW!@', forename: 'Jen', surname: 'Adams', species:Constants.user.species.OWNER)
+puts "User count: #{User.all.count}"
+# ***************
+# 
