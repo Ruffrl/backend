@@ -14,10 +14,10 @@ User.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 puts "User count: #{User.all.count}"
 puts 'creating User records'
-User.create!(email: 'rock@gmail.com', password: '12qwQW!@', forename: 'Sam', surname: 'Thomas', species: Constants.user.species.OWNER)
-User.create!(email: 'pop@hotmail.com', password: '12qwQW!@', forename: 'Sarah', surname: 'Jones', species: Constants.user.species.CARETAKER)
-User.create!(email: 'country@msn.com', password: '12qwQW!@', forename: 'Joe', surname: 'Smith', species: Constants.user.species.OWNER_AND_CARETAKER)
-User.create!(email: 'folk@aol.com', password: '12qwQW!@', forename: 'Jen', surname: 'Adams', species:Constants.user.species.OWNER)
+User.create!(email: 'rock@gmail.com', password: 'password', forename: 'Sam', surname: 'Thomas', species: Constants.user.species.OWNER, jti: 'token1')
+User.create!(email: 'pop@hotmail.com', password: 'password', forename: 'Sarah', surname: 'Jones', species: Constants.user.species.CARETAKER, jti: 'token2')
+User.create!(email: 'country@msn.com', password: 'password', forename: 'Joe', surname: 'Smith', species: Constants.user.species.OWNER_AND_CARETAKER, jti: 'token3')
+User.create!(email: 'folk@aol.com', password: 'password', forename: 'Jen', surname: 'Adams', species:Constants.user.species.OWNER, jti: 'token4')
 puts "User count: #{User.all.count}"
 # ***************
 # 
