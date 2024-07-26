@@ -3,6 +3,8 @@
 module Admin
   # For Admin testing User purposes
   class UsersController < ApplicationController
+    before_action :authenticate_user!, except: %I[index]
+
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
