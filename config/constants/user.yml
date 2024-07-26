@@ -1,0 +1,9 @@
+user:
+  species:
+    - OWNER
+    - CARETAKER
+    - OWNER_AND_CARETAKER
+  ages:
+    one_week: 1 week
+    one_month: 1 month
+    one_year: 1 year
