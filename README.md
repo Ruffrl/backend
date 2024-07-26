@@ -105,6 +105,8 @@ rails s
 
 Visit http://localhost:3000/admin/users to see test API
 
+- See also [frontend setup](https://github.com/Ruffrl/rufferal-frontend?tab=readme-ov-file#install)
+
 <!-- ## Deploy
 
 ### With Heroku pipeline (recommended)
