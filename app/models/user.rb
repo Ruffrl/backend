@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Devise based User model
 class User < ApplicationRecord
   include Devise::JWT::RevocationStrategies::JTIMatcher
 
@@ -5,4 +8,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :jwt_authenticatable, jwt_revocation_strategy: self
+
+  has_one :profile
+
+  accepts_nested_attributes_for :profile
 end
