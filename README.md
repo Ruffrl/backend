@@ -6,6 +6,8 @@ The Rails (ruby) backend which provisions REST APIs, Authentication including em
 
 ## Install
 
+Setup assumes you have a MacOS
+
 ### Prereqs
 
 - [Homebrew](https://brew.sh/)
