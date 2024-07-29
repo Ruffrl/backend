@@ -15,14 +15,25 @@ Setup assumes you have a MacOS
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     ```
 - rbenv
-  - ```shell
-    brew install postgresql
-    ```
+  ```shell
+  brew install rbenv
+  rbenv init
+  # Restart terminal or source your profile
+  ```
 - Postgresql
-  - ```shell
-    brew install postgresql
-    brew services start postgresql
-    ```
+  ```shell
+  brew install postgresql
+  # port: 5432
+  brew services start postgresql
+  # brew services stop postgresql
+  # brew services restart postgresql
+  ```
+- Postgresql
+  ```shell
+  brew install nginx
+  # port: 8080
+  brew services start nginx
+  ```
 
 ### Clone the repository
 
@@ -103,6 +114,7 @@ heroku git:remote --remote heroku-staging -a project-staging
 
 ```shell
 rails s
+# port: 5000
 ```
 
 Visit http://localhost:3000/admin/users to see test API
