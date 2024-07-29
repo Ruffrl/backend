@@ -272,6 +272,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :google_oauth2, 'GOOGLE_OAUTH_CLIENT_ID', 'GOOGLE_OAUTH_CLIENT_SECRET'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -310,15 +311,15 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-  
+
   # SETUP FOR DEVISE-JWT
-  # Specify that on every login POST request it should append the JWT 
-  # token to the ‘Authorization’ header as “Bearer + token” when 
-  # there’s a successful response sent back, and on a logout DELETE 
+  # Specify that on every login POST request it should append the JWT
+  # token to the ‘Authorization’ header as “Bearer + token” when
+  # there’s a successful response sent back, and on a logout DELETE
   # request, the token should be revoked
   # Expiration set to 30 minutes
-  # 
-  # SUGGESTION: In the JWT requests delimit the 
+  #
+  # SUGGESTION: In the JWT requests delimit the
   # regex with ^ and $ to avoid unintentional matches
   config.jwt do |jwt|
     jwt.secret = Rails.application.credentials.devise_jwt_secret_key!
