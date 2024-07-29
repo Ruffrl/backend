@@ -22,10 +22,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_25_224749) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "forename"
-    t.string "surname"
-    t.string "avatar"
-    t.string "species"
     t.string "jti", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["jti"], name: "index_users_on_jti", unique: true

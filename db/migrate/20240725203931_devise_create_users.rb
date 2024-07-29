@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Add Devise User model (https://github.com/heartcombo/devise?tab=readme-ov-file#getting-started)
 class DeviseCreateUsers < ActiveRecord::Migration[7.1]
   def change
     create_table :users do |t|
