@@ -33,12 +33,3 @@ pidfile ENV.fetch('PIDFILE') { 'tmp/pids/server.pid' }
 
 # Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart
-
-# Add SSL with nginx
-# key = File.join('config', 'certs', 'privkey.pem').to_s
-# crt = File.join('config', 'certs', 'fullchain.pem').to_s
-# ssl_bind '0.0.0.0', 443, {
-#   key:,
-#   cert: crt,
-#   verify_mode: 'none'
-# }

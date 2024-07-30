@@ -37,19 +37,22 @@ gem 'bootsnap', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
 gem 'rack-cors'
 
-# Flexible authentication solution for Rails with Warden [https://github.com/heartcombo/devise]
-gem 'devise'
-
 # A fast JSON:API serializer for Ruby Objects [https://github.com/jsonapi-serializer/jsonapi-serializer]
 gem 'jsonapi-serializer'
 
-# Strategy to authenticate with Google via OAuth2 in OmniAuth [https://github.com/zquestz/omniauth-google-oauth2]
-gem 'omniauth-google-oauth2'
+# # Flexible authentication solution for Rails with Warden [https://github.com/heartcombo/devise]
+# gem 'devise'
 
-# This gem provides a mitigation against CVE-2015-9284 (Cross-Site Request Forgery on the request phase when using
-# OmniAuth gem with a Ruby on Rails application) by implementing a CSRF token verifier that directly uses
-# ActionController::RequestForgeryProtection code from Rails [https://github.com/cookpad/omniauth-rails_csrf_protection]
-gem 'omniauth-rails_csrf_protection'
+# # OmniAuth is a flexible authentication system utilizing Rack middleware [https://github.com/omniauth/omniauth]
+# gem 'omniauth'
+
+# # Strategy to authenticate with Google via OAuth2 in OmniAuth [https://github.com/zquestz/omniauth-google-oauth2]
+# gem 'omniauth-google-oauth2'
+
+# # This gem provides a mitigation against CVE-2015-9284 (Cross-Site Request Forgery on the request phase when using
+# # OmniAuth gem with a Ruby on Rails application) by implementing a CSRF token verifier that directly uses
+# # ActionController::RequestForgeryProtection code from Rails [https://github.com/cookpad/omniauth-rails_csrf_protection]
+# gem 'omniauth-rails_csrf_protection'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

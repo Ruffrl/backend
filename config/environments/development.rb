@@ -42,7 +42,7 @@ Rails.application.configure do
 
   # DEVISE: required definition for default url options
   # DEVISE: In production, :host should be set to the actual host of your application
-  config.action_mailer.default_url_options = { host: 'localhost', port: 5000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 5000 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -74,5 +74,3 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
 end
-
-OmniAuth.config.full_host = ENV['FULL_HOST']
