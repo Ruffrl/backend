@@ -40,9 +40,6 @@ gem 'rack-cors'
 # Flexible authentication solution for Rails with Warden [https://github.com/heartcombo/devise]
 gem 'devise'
 
-# A Devise extension which uses JWT tokens for user authentication; it follows secure by default principle [https://github.com/waiting-for-dev/devise-jwt]
-gem 'devise-jwt'
-
 # A fast JSON:API serializer for Ruby Objects [https://github.com/jsonapi-serializer/jsonapi-serializer]
 gem 'jsonapi-serializer'
 

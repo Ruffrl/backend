@@ -23,8 +23,7 @@ puts 'creating User records'
 # user1 = User.create!(email: 'rock@gmail.com', password: 'password', jti: 'token1')
 User.create!(
   email: 'rock@gmail.com',
-  password: 'password',
-  jti: 'token1'
+  password: 'password'
 )
     .create_profile!(
       forename: 'Sam',
@@ -33,8 +32,7 @@ User.create!(
     )
 User.create!(
   email: 'pop@hotmail.com',
-  password: 'password',
-  jti: 'token2'
+  password: 'password'
 )
     .create_profile!(
       forename: 'Sarah',
@@ -44,8 +42,7 @@ User.create!(
     )
 User.create!(
   email: 'country@msn.com',
-  password: 'password',
-  jti: 'token3'
+  password: 'password'
 )
     .create_profile!(
       forename: 'Joe',
@@ -55,8 +52,7 @@ User.create!(
     )
 User.create!(
   email: 'folk@aol.com',
-  password: 'password',
-  jti: 'token4'
+  password: 'password'
 )
     .create_profile!(
       forename: 'Jen',
