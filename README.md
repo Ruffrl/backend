@@ -74,10 +74,12 @@ bundle
 
 ### Set environment variables
 
-#### Generate Devise secret
+blarg
+
+#### Add credentials
 
 ```shell
-bundle exec rails secret
+# bundle exec rails secret
 
 EDITOR='code --wait' rails credentials:edit
 # If this errors due to "Adding config/master.key"
@@ -91,8 +93,10 @@ Add the following
 
 ```yml
 # Other secrets...
-# Used as the base secret for Devise-JWT
-devise_jwt_secret_key: (copy and paste the generated secret here)
+
+# Google Omniauth
+google_client_id: (copy and paste secret here)
+google_client_secret: (copy and paste the generated secret here)
 ```
 
 <!-- Using [Figaro](https://github.com/laserlemon/figaro): -->

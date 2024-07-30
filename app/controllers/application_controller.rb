@@ -5,7 +5,7 @@
 #  This “sanitizes” (or permits) these new parameters
 class ApplicationController < ActionController::API
   # For API development; will prevent rendering view
-  respond_to :json
+  # respond_to :json
 
   # before_action :configure_permitted_parameters, if: :devise_controller?
 
