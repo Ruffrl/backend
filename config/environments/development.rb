@@ -40,9 +40,8 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  # DEVISE: required definition for default url options
-  # DEVISE: In production, :host should be set to the actual host of your application
-  # config.action_mailer.default_url_options = { host: 'localhost', port: 5000 }
+  # DRODAUTH
+  config.action_mailer.default_url_options = { host: 'localhost', port: 5000 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
