@@ -28,11 +28,15 @@ Setup assumes you have a MacOS
   # brew services stop postgresql
   # brew services restart postgresql
   ```
-- Postgresql
+- nginx
   ```shell
   brew install nginx
+  # Mine installed here `/opt/homebrew/etc/nginx/nginx.conf`
   # port: 8080
-  brew services start nginx
+  # You can visit http://localhost:8080/ to confirm installation
+  # It should automatically strt
+  # brew services start nginx
+  # brew services restart nginx
   ```
 
 ### Clone the repository

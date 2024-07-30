@@ -4,6 +4,9 @@
 #  We also want name, avatar, and species (user type == OWNER, CARETAKER, OWNER_AND_CARETAKER)
 #  This “sanitizes” (or permits) these new parameters
 class ApplicationController < ActionController::API
+  # For API development; will prevent rendering view
+  respond_to :json
+
   # before_action :configure_permitted_parameters, if: :devise_controller?
 
   # protected
