@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'debug'
-
 # RodAuth generated
 class RodauthController < ApplicationController
   # Used by Rodauth for rendering views, CSRF protection, running any
@@ -22,8 +20,4 @@ class RodauthController < ApplicationController
   #     "application"
   #   end
   # end
-
-  def login
-    binding.b
-  end
 end

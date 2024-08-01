@@ -30,7 +30,7 @@ class RodauthMain < Rodauth::Rails::Auth
 
     # The secret key used for hashing public-facing tokens for various features.
     # Defaults to Rails `secret_key_base`, but you can use your own secret key.
-    # hmac_secret "a594b49f29462642406684182bc31e47873cfb4e8aa8e1bb0855e96a688c179b6f0f2ff954a372805c8b44d129acd35563d11e054b54eb3a3fd44ef6ff2db497"
+    # hmac_secret "0c2626d83da8afd1b944ac8e38d0b3d8b809d507c13091a575aadd4ba497f3f0b1d7004c51e6148ebee57093a630a35f34fa08924b9a990741536ce0cb0ed177"
 
     # Accept only JSON requests.
     only_json? true
@@ -136,7 +136,7 @@ class RodauthMain < Rodauth::Rails::Auth
     # ==> Remember Feature
     # Remember all logged in users.
     after_login { remember_login }
-    after_login { rails_cookies.permanent[:last_account_id] = account_id }
+    # after_login { rails_cookies.permanent[:last_account_id] = account_id }
 
     # Or only remember users that have ticked a "Remember Me" checkbox on login.
     # after_login { remember_login if param_or_nil("remember") }
