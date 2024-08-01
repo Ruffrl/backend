@@ -16,4 +16,14 @@ class ApplicationController < ActionController::API
 
   #   devise_parameter_sanitizer.permit(:account_update, keys: %i[forename surname avatar species])
   # end
+
+  private
+
+  def current_account
+    rodauth.rails_account
+  end
+
+  def authenticate_account
+    rodauth.require_account # redirect to login page if not authenticated
+  end
 end

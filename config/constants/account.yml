@@ -1,0 +1,9 @@
+account:
+  status:
+    unverified: 1
+    verified: 2
+    closed: 3
+  role:
+    - SUPERADMIN
+    - ADMIN
+    - USER

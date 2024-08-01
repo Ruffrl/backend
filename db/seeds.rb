@@ -18,7 +18,8 @@ puts "count of Accounts: #{Account.all.count}"
 puts 'creating Account records'
 Account.create!(
   email: 'rock@gmail.com',
-  password: 'password'
+  password: 'password',
+  status: Constants.account.status.verified
 )
        .create_profile!(
          forename: 'Sam',

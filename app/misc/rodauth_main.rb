@@ -136,6 +136,7 @@ class RodauthMain < Rodauth::Rails::Auth
     # ==> Remember Feature
     # Remember all logged in users.
     after_login { remember_login }
+    after_login { rails_cookies.permanent[:last_account_id] = account_id }
 
     # Or only remember users that have ticked a "Remember Me" checkbox on login.
     # after_login { remember_login if param_or_nil("remember") }

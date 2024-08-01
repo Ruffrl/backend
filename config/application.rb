@@ -30,8 +30,14 @@ module Backend
     config.api_only = true
 
     # Prepares application for frontend requests by reintroducing the middleware
-    config.middleware.use ActionDispatch::Flash
+    # config.middleware.use ActionDispatch::Flash
+    # config.middleware.use ActionDispatch::Cookies
+    # config.middleware.use ActionDispatch::Session::CookieStore
+
+    # Prepares RodAuth application for frontend requests by reintroducing the middleware
+    config.session_store :cookie_store, key: '_your_app_api_session'
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use config.session_store, config.session_options
+    # config.middleware.use ActionDispatch::Session::CookieStore
   end
 end
