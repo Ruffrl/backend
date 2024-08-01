@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# RodAuth generated
 class RodauthMailer < ApplicationMailer
   default to: -> { @rodauth.email_to }, from: -> { @rodauth.email_from }
 

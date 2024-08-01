@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# RodAuth generated
 class RodauthController < ApplicationController
   # Used by Rodauth for rendering views, CSRF protection, running any
   # registered action callbacks and rescue handlers, instrumentation etc.
