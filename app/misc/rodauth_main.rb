@@ -4,7 +4,7 @@ require 'sequel/core'
 
 # RodAuth generated
 class RodauthMain < Rodauth::Rails::Auth
-  configure do
+  configure do # rubocop:disable Metrics/BlockLength
     # List of authentication features that are loaded.
     enable :create_account, :verify_account, :verify_account_grace_period,
            :login, :logout, :remember, :json,
@@ -132,6 +132,18 @@ class RodauthMain < Rodauth::Rails::Auth
     #     false
     #   end
     # end
+
+    # ==> JWT
+    # use_jwt? true
+    after_login do
+      payload = { account_id: param('account_id') }
+      require 'debug'
+      binding.b
+      token = Utils::JwtHelper.generate_secret({ account_id: param('account_id') })
+      require 'debug'
+      binding.b
+      set_jwt_token(token)
+    end
 
     # ==> Remember Feature
     # Remember all logged in users.
