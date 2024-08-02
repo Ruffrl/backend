@@ -60,6 +60,10 @@ gem 'jsonapi-serializer'
 # # A ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard [https://github.com/jwt/ruby-jwt]
 # gem 'jwt', '~> 2.8'
 
+# Generate a pre-built authentication system into a rails application that follows both security and rails best practices
+# [https://github.com/lazaronixon/authentication-zero]
+gem 'authentication-zero'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
