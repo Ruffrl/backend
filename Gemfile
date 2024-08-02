@@ -54,11 +54,11 @@ gem 'jsonapi-serializer'
 # # ActionController::RequestForgeryProtection code from Rails [https://github.com/cookpad/omniauth-rails_csrf_protection]
 # gem 'omniauth-rails_csrf_protection'
 
-# Provides Rails integration for the Rodauth(https://github.com/jeremyevans/rodauth) authentication framework [https://github.com/janko/rodauth-rails]
-gem 'rodauth-rails', '~> 1.14'
+# # Provides Rails integration for the Rodauth(https://github.com/jeremyevans/rodauth) authentication framework [https://github.com/janko/rodauth-rails]
+# gem 'rodauth-rails', '~> 1.14'
 
-# A ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard [https://github.com/jwt/ruby-jwt]
-gem 'jwt', '~> 2.8'
+# # A ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard [https://github.com/jwt/ruby-jwt]
+# gem 'jwt', '~> 2.8'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
