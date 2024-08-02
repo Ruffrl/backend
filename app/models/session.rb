@@ -19,7 +19,6 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
-# Manage storing and retrieving user/account data
 class Session < ApplicationRecord
   belongs_to :user
 

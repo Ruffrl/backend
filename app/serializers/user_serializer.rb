@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 # Permits User data
-class AccountSerializer
+class UserSerializer
   include JSONAPI::Serializer
 
   set_key_transform :camel_lower
 
-  attributes :id, :email, :status, :forename, :surname, :avatar, :species
+  attributes :id, :email, :verified, :forename, :surname, :avatar, :species
 end

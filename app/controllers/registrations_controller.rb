@@ -2,23 +2,29 @@
 
 # Manage user registations (create account)
 class RegistrationsController < ApplicationController
-  skip_before_action :authenticate
+  skip_before_action :authenticate_user
 
+  # /sign_up
   def create
     @user = User.new(user_params)
 
     if @user.save
       send_email_verification
-      render json: @user, status: :created
+      token = issue_token(@user)
+
+      render json: { user: UserSerializer.new(@user), jwt: token }, status: :created
+    elsif @user.errors.messages
+      render json: { error: @user.errors }, status: :unprocessable_entity
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: { error: 'User could not be created. Please try again.' }, status: :unprocessable_entity
     end
   end
 
   private
 
   def user_params
-    params.permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation)
+    # params.require(:user).permit(:email, :password, :forename, :surname, :avatar, :species)
   end
 
   def send_email_verification

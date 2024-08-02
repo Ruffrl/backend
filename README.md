@@ -79,7 +79,8 @@ blarg
 #### Add credentials
 
 ```shell
-# bundle exec rails secret
+# This will output a random 32-bytes/256-bit jumble of letters and characters. Hold onto this key.
+openssl rand -base64 32
 
 EDITOR='code --wait' rails credentials:edit
 # If this errors due to "Adding config/master.key"
@@ -94,9 +95,15 @@ Add the following
 ```yml
 # Other secrets...
 
+# JWT Secret
+jwt_key: (copy and paste random secret from openssl generation above)
+# jwt_key: (copy and paste from <secure location for shared development>)
+
 # Google Omniauth
 google_client_id: (copy and paste secret here)
+# google_client_id: (copy and paste from <secure location for shared development>)
 google_client_secret: (copy and paste the generated secret here)
+# google_client_secret: (copy and paste from <secure location for shared development>)
 ```
 
 <!-- Using [Figaro](https://github.com/laserlemon/figaro): -->
@@ -154,6 +161,19 @@ git push heroku
 ``` -->
 
 ## Notes
+
+## Annotate
+
+```ruby
+### Add schema information (as comments) to model and fixture files
+# rake annotate_models
+
+### Adds the route map to routes.rb
+# rake annotate_routes
+
+### Remove schema information from model and fixture files
+# rake remove_annotation
+```
 
 ### Auth routes
 

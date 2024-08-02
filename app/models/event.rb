@@ -20,7 +20,6 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
-# Manage storing and retrieving account tracking data
 class Event < ApplicationRecord
   belongs_to :user
 

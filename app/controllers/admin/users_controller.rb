@@ -1,22 +1,23 @@
 # frozen_string_literal: true
 
 module Admin
-  # For Admin testing/debugging Accounts
-  class AccountsController < ApplicationController
+  # For Admin testing/debugging Users/accounts
+  class UsersController < ApplicationController
+    before_action :authenticate_user
     # before_action :authenticate_user!, except: %I[index]
 
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def index
-      accounts = Account.all
-      render json: AccountSerializer.new(accounts)
+      users = User.all
+      render json: UserSerializer.new(users)
     end
 
     private
 
     def render_not_found_response
-      render json: { error: 'Account Not Found' }, status: :not_found
+      render json: { error: 'User Not Found' }, status: :not_found
     end
 
     def render_unprocessable_entity_response(invalid)

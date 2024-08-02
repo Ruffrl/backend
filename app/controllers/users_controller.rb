@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-# Handles CRUD endpoints for Accounts
-class AccountsController < ApplicationController
+# Handles CRUD endpoints for Users
+# BLARG - is this controller necessary?
+class UsersController < ApplicationController
   before_action :authenticate_account
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response

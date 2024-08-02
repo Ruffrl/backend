@@ -15,7 +15,6 @@
 #
 #  index_users_on_email  (email) UNIQUE
 #
-# The user account data (see Profile for user metadata)
 class User < ApplicationRecord
   has_secure_password
 

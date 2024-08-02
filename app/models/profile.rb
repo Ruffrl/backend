@@ -22,7 +22,6 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
-# User Profile data
 class Profile < ApplicationRecord
   belongs_to :user
 
