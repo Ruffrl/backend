@@ -5,6 +5,12 @@ require 'active_support/core_ext/integer/time'
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Rate limit general requests by IP address in a rate of 1000 requests per minute
+  config.middleware.use(Rack::Ratelimit, name: 'General', rate: [1000, 1.minute], redis: Redis.new,
+                                         logger: Rails.logger) do |env|
+    ActionDispatch::Request.new(env).ip
+  end
+
   # Code is not reloaded between requests.
   config.enable_reloading = false
 

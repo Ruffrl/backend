@@ -5,6 +5,7 @@ module Identity
   class PasswordResetsController < ApplicationController
     skip_before_action :authenticate
 
+    before_action :require_lock, only: :create
     before_action :set_user, only: :update
 
     def edit

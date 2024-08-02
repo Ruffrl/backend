@@ -103,6 +103,10 @@ GEM
     json (2.7.2)
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
+    kredis (1.7.0)
+      activemodel (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      redis (>= 4.2, < 6)
     language_server-protocol (3.17.0.3)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -153,6 +157,7 @@ GEM
     rack (3.1.7)
     rack-cors (2.0.2)
       rack (>= 2.0.0)
+    rack-ratelimit (1.2.1)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -193,6 +198,7 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
+    redis (4.8.1)
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
@@ -239,11 +245,14 @@ DEPENDENCIES
   bootsnap
   debug
   jsonapi-serializer
+  kredis
   pg (~> 1.1)
   puma (>= 5.0)
   pwned
   rack-cors
+  rack-ratelimit
   rails (~> 7.1.3, >= 7.1.3.4)
+  redis (~> 4.0)
   rubocop
   tzinfo-data
 

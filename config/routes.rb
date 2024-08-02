@@ -7,13 +7,17 @@ Rails.application.routes.draw do
 
   resources :sessions, only: %i[index show destroy]
   resource  :password, only: %i[edit update]
+  resources :profiles
+
+  namespace :authentications do
+    resources :events, only: :index
+  end
 
   namespace :identity do
     resource :email,              only: %i[edit update]
     resource :email_verification, only: %i[show create]
     resource :password_reset,     only: %i[new edit create update]
   end
-  resources :profiles
   # resources :accounts, except: %i[index]
 
   namespace :admin do

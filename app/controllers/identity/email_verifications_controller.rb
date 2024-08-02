@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Identify
+module Identity
   # Manage account verification
   class EmailVerificationsController < ApplicationController
     skip_before_action :authenticate, only: :show
