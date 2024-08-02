@@ -78,6 +78,10 @@ group :development, :test do
 
   # RuboCop is a Ruby static code analyzer (a.k.a. linter) and code formatter [https://github.com/rubocop/rubocop]
   gem 'rubocop'
+
+  # Add a comment summarizing the current schema to the top or bottom of each of
+  # models, fixtures, tests, examplars, blueprints, fabricators, factories, and routes [https://github.com/ctran/annotate_models]
+  gem 'annotate'
 end
 
 group :development do
