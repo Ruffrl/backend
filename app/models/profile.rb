@@ -2,7 +2,7 @@
 
 # User Profile data
 class Profile < ApplicationRecord
-  belongs_to :account
+  belongs_to :user
 
   validates :forename, presence: true
   validates :surname, presence: true
