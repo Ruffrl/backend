@@ -2,7 +2,7 @@
 
 # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  post 'sign_in', to: 'sessions#create'
+  post 'login', to: 'sessions#create'
   post 'sign_up', to: 'registrations#create'
 
   resources :sessions, only: %i[index show destroy]

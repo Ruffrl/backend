@@ -4,9 +4,6 @@
 class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
-  # For API development; will prevent rendering view
-  respond_to :json
-
   before_action :set_current_request_details
   before_action :authenticate
 
