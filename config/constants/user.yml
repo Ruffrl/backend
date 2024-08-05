@@ -1,9 +1,9 @@
-user:
-  species:
-    - OWNER
-    - CARETAKER
-    - OWNER_AND_CARETAKER
-  ages:
-    one_week: 1 week
-    one_month: 1 month
-    one_year: 1 year
+account:
+  status:
+    unverified: 1
+    verified: 2
+    closed: 3
+  role:
+    - SUPERADMIN
+    - ADMIN
+    - USER

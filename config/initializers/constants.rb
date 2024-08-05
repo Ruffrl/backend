@@ -1,6 +1,4 @@
-# # config/initializers/constants.rb
-
-# # frozen_string_literal: true
+# frozen_string_literal: true
 
 require 'constant/initialize'
 

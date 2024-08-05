@@ -1,19 +1,20 @@
 # frozen_string_literal: true
 
 module Admin
-  # For Admin testing User purposes
+  # For Admin testing/debugging Users/accounts
   class UsersController < ApplicationController
-    before_action :authenticate_user!, except: %I[index]
+    before_action :authorize_user
 
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
     def index
-      render json: User.all
+      users = User.all
+      render json: UserSerializer.new(users)
     end
 
     def show
-      render json: User.find(params[:id])
+      render json: UserSerializer.new(User.find(params[:id]))
     end
 
     def destroy

@@ -1,0 +1,5 @@
+profile:
+  species:
+    - OWNER
+    - CARETAKER
+    - OWNER_AND_CARETAKER
