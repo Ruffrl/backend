@@ -2,7 +2,7 @@
 
 # Manage user registations (create account)
 class RegistrationsController < ApplicationController
-  skip_before_action :authenticate_user
+  skip_before_action :authorize_user
 
   # /sign_up
   def create
@@ -10,7 +10,8 @@ class RegistrationsController < ApplicationController
 
     if @user.save
       send_email_verification
-      token = issue_token(@user)
+      payload = { user_id: @user.id }
+      token = issue_token(payload:)
 
       render json: { user: UserSerializer.new(@user), jwt: token }, status: :created
     elsif @user.errors.messages

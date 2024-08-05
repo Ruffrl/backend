@@ -3,8 +3,7 @@
 module Admin
   # For Admin testing/debugging Users/accounts
   class UsersController < ApplicationController
-    before_action :authenticate_user
-    # before_action :authenticate_user!, except: %I[index]
+    before_action :authorize_user
 
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
@@ -12,6 +11,15 @@ module Admin
     def index
       users = User.all
       render json: UserSerializer.new(users)
+    end
+
+    def show
+      render json: UserSerializer.new(User.find(params[:id]))
+    end
+
+    def destroy
+      User.find(params[:id]).destroy
+      head :no_content
     end
 
     private

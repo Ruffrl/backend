@@ -2,9 +2,9 @@
 
 # Manage user sessions (token behavior)
 class SessionsController < ApplicationController
-  skip_before_action :authenticate_user, only: :create
+  skip_before_action :authorize_user, only: :create
 
-  before_action :set_session, only: %i[show destroy]
+  # before_action :set_session, only: %i[show destroy]
 
   def index
     render json: Current.user.sessions.order(created_at: :desc)
@@ -26,7 +26,9 @@ class SessionsController < ApplicationController
       # response.set_header 'X-Session-Token', @session.signed_id
 
       payload = { user_id: user.id }
-      token = issue_token(payload)
+      # token = issue_token(payload:)
+      # DEBUGGING - set expiration to two minutes
+      token = issue_token(payload:, expiration: 2 * 60)
       # response.headers['Authorization'] = "Bearer #{token}"
       response.set_header 'Authorization', "Bearer #{token}"
 
@@ -38,15 +40,20 @@ class SessionsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @session.destroy
+  # end
+
   def destroy
+    # require 'debug'; binding.b
     @session.destroy
   end
 
   private
 
-  def set_session
-    @session = Current.user.sessions.find(params[:id])
-  end
+  # def set_session
+  #   @session = Current.user.sessions.find(params[:id])
+  # end
 
   def user_params
     params.require(:user).permit(:email, :password)
